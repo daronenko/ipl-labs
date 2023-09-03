@@ -1,0 +1,48 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f2f1f6;
+}
+
+input[type=text], input[type=password] {
+  border-radius: 7px;
+  margin: 5px;
+  border: 1px solid #c5c5c7;
+  font-size: 14px;
+  padding: 10px;
+  background-color: #fafbfb;
+}
+
+.header {
+    text-align: center;
+}
+
+#submit-button {
+    margin: auto; 
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    background: dodgerblue;
+    color: white;
+    border-radius: 7px;
+    width: 100%;
+}
+
+#submit-button:hover {
+   background: rgb(2,0,36);
+   background: linear-gradient(90deg, rgba(30,144,255,1) 0%, rgba(0,212,255,1) 100%);
+}
+
+#submit-button:active {
+  transform: translate(0em, 0.2em);
+}
+
+.panel {
+    padding: 1px 20px 20px 20px;
+    background-color: #ffffff;
+    border-radius: 15px;
+
+    -webkit-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2); 
+}
