@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  </head>
+  <body>
+    <div id="main">
+      <h1><code class="prettyprint lang-cpp">std::vector</code></h1>
+      <div class="block">
+        <h2>Intro</h2>
+        <p>
+          The elements are stored <strong>contiguously</strong>, which means
+          that elements can be accessed <em>not only through iterators</em>,
+          but also using <strong>offsets</strong> to regular pointers
+          to elements. This means that a pointer to an element of a vector
+          <em>may be passed to any function</em> that expects a pointer
+          to an element of an array.
+        </p>
+        <p>
+          The storage of the vector is handled <strong>automatically</strong>,
+          being expanded as needed. Vectors usually occupy more space than static
+          arrays, because more memory is allocated to handle future growth. This
+          way a vector <em>does not need to reallocate each time an element is
+          inserted</em>, but only when the additional memory is exhausted. The
+          total amount of allocated memory can be queried using
+          <a href="https://en.cppreference.com/w/cpp/container/vector/capacity">
+            <code>capacity()</code>
+          </a>
+          function. Extra memory <em>can be returned</em> to the system via a call to
+          <a href="https://en.cppreference.com/w/cpp/container/vector/shrink_to_fit">
+            <code>shrink_to_fit()</code>
+          </a>
+          .
+        </p>
+        <p>
+          Reallocations are usually costly operations in terms of performance.
+          The
+          <a href="https://en.cppreference.com/w/cpp/container/vector/reserve">
+            <code>reserve()</code>
+          </a>
+          function can be used to eliminate reallocations if the number of
+          elements is known beforehand.
+        </p>
+        <p>
+          The <strong>complexity</strong> (efficiency) of common operations
+          on vectors is as follows:
+        </p>
+        <ul>
+          <li>
+            Random access - <em>constant</em>
+            <math>
+              <mo>O</mo>
+              <mo>(</mo>
+                <mn>1</mn>
+              <mo>)</mo>
+            </math>
+          </li>
+          <li>
+            Insertion or removal of elements at the end - <em>amortized constant</em>
+            <math>
+              <mo>O</mo>
+              <mo>(</mo>
+              <mn>1</mn>
+              <mo>)</mo>
+            </math>
+          </li>
+          <li>
+            Insertion or removal of elements - <em>linear in the distance to the end
+              of the vector</em>
+            <math>
+              <mo>O</mo>
+              <mo>(</mo>
+                <mn>n</mn>
+              <mo>)</mo>
+            </math>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <h2>Example</h2>
+        <code class="prettyprint lang-cpp">
+          #include &lt;iostream&gt;<br/>
+          #include &lt;vector&gt;<br/>
+          <br/>
+          int main() {<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;// Create a vector containing integers<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;std::vector&lt;int&gt; v = {8, 4, 5, 9};<br/>
+          <br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;// Add two more integers to vector<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;v.push_back(6);<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;v.push_back(9);<br/>
+          <br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;// Overwrite element at position 2<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;v[2] = -1;<br/>
+          <br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;// Print out the vector<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;for (int n : v)<br/>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;std::cout << n << ' ';<br/>
+              &nbsp;&nbsp;&nbsp;&nbsp;std::cout << std::endl;<br/>
+          }<br/>
+        </code>
+      </div>
+    </div>
+  </body>
+</html>
