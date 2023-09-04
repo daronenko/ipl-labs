@@ -1,5 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
+    background-color: #f2f1f6;
 }
 
 div#main {
@@ -25,10 +26,12 @@ table {
     text-align: center;
     border-style: hidden;
     font-weight: 500;
+    border: 1px solid black;
 }
 
 th, td {
     padding: 10px;
+    border: 1px solid black;
 }
 
 .table-head {
