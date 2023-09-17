@@ -1,0 +1,56 @@
+body {
+    background-color: #f2f1f6;
+    color: #010100;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+
+    margin-bottom: 50px;
+}
+
+div#main {
+    width: 50%;
+    margin: auto;
+}
+
+div.block {
+    margin-bottom: 40px;
+    padding: 5px 40px 20px 40px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 17px;
+
+    -webkit-box-shadow: 3px 1px 14px 1px rgba(34, 60, 80, 0.1);
+    -moz-box-shadow: 3px 1px 14px 1px rgba(34, 60, 80, 0.1);
+    box-shadow: 3px 1px 14px 1px rgba(34, 60, 80, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h2 {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+code {
+    font-family: 'JetBrains Mono', monospace;
+    line-height: 0.5;
+}
+
+math {
+    font-family: serif;
+    font-style: italic;
+    letter-spacing: 0px;
+}
