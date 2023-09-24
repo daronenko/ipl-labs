@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <title>Lab-4</title>
+        <link href="./style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div id="feed">
+            <div class="block">
+                <h2 class="block-title">Товары</h2>
+                <div id="showcase"></div>
+            </div>
+            <div class="block">
+                <h2 class="block-title">Добавить</h2>
+                <input type="text" id="name" placeholder="Наименование"><br>
+                <input type="number" id="price" placeholder="Цена"><br>
+                <input type="button" value="Добавить" onclick="add_good()">
+            </div>
+            <div class="block">
+                <h2 class="block-title">Корзина <button class="icon-btn" onclick="clear_goods()"><i class="fa fa-remove"></i></button></h2>
+                <div class="div-table" id="goods-list">
+                    <div class="div-table-row">
+                        <div class="div-table-head">Наименование</div>
+                        <div class="div-table-head">Цена, ₽</div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <h2 class="block-title">Итог <button class="icon-btn" onclick="refresh_total()"><i class="fa fa-refresh"></i></button></h2>
+                <div class="div-table">
+                    <div class="div-table-row">
+                        <div class="div-table-head">Всего:</div>
+                        <div class="div-table-cell" id="result-price">0 ₽</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="./main.js"></script>
+    </body>
+</html>
