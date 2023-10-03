@@ -43,6 +43,6 @@ class TestFixText < Minitest::Test
       strings.push(new_strings)
     end
 
-    strings
+    string
   end
 end
