@@ -1,0 +1,20 @@
+<table>
+  <% @sequences.length.times do |i| %>
+    <tr>
+      <td><%= "Sequence №#{i + 1}:" %></td>
+      <td><%= @sequences[i].join(' ') %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td>Longest:</td>
+    <td>
+      <% if @longest_sequence.empty? %>
+        <%= 'unknown' %>
+      <% else %>
+        <%= @longest_sequence.join(' ') %>
+      <% end %>
+    </td>
+  </tr>
+</table>
+<br>
+<%= link_to "Back", :calc_input %>
