@@ -1,0 +1,2 @@
+--default-path test/spec/
+--pattern ****/*_spec.rb

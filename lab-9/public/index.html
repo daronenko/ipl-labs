@@ -51,9 +51,8 @@
             }
 
             function show_result(data) {
-                let result = document.getElementById("result");
-                let table = document.createElement("table");
-                table.id = "result_table";
+                let table = document.getElementById("result_table");
+                table.innerHTML = "";
 
                 for (const sequence of data.value.sequences) {
                     table.appendChild(create_row("Sequence Found:", sequence));
@@ -64,9 +63,6 @@
                 } else {
                     table.appendChild(create_row("Longest Sequence:", ["Not Found"]));
                 }
-
-                result.innerHTML = "<br>";
-                result.appendChild(table);
             }
         </script> 
     </head>
@@ -77,6 +73,6 @@
             <br><br>
             <input name="commit" type="submit" value="Get Result" onclick="return send_query();">
         </form>
-        <div id="result"></div>
+        <div id="result"><br><table id="result_table"></table></div>
     </body>
 </html>
