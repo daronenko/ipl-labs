@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html charset=utf-8">
+        <title>AJAX Calc</title>
+        <script>
+            calc_url= location.protocol + "//" + location.host + "/calc/view.json"
+            
+            function send_query() {
+                var frm = document.forms.calc_form;
+                var param_str = "";
+
+                if (frm.array.value?.trim()) {
+                    param_str = "?" + "array=" + frm.array.value;
+                } else {
+                    alert("Enter the array of numbers!");
+                    return false;
+                }
+               
+                var my_JSON_object = {};
+                var http_request = new XMLHttpRequest();
+                http_request.open("GET", calc_url + param_str, true);
+                http_request.onreadystatechange = function () {
+                    var done = 4, ok = 200;
+                    if (http_request.readyState == done && http_request.status == ok) {
+                        my_JSON_object = JSON.parse(http_request.responseText);
+                        show_result(my_JSON_object);
+                    }
+                };
+
+                http_request.send(null);
+                
+                return false;
+            }
+
+            function create_row(title, sequence) {
+                let row = document.createElement("tr");
+                
+                let title_item = document.createElement("td");
+                title_item.innerHTML = title;
+                
+                let value_item = document.createElement("td");
+                if (sequence) {
+                    value_item.innerHTML = sequence.join(" ");
+                }
+                
+                row.appendChild(title_item);
+                row.appendChild(value_item);
+
+                return row;
+            }
+
+            function show_result(data) {
+                let result = document.getElementById("result");
+                let table = document.createElement("table");
+                table.id = "result_table";
+
+                for (const sequence of data.value.sequences) {
+                    table.appendChild(create_row("Sequence Found:", sequence));
+                }
+
+                if (data.value.longest_sequence) {
+                    table.appendChild(create_row("Longest Sequence:", data.value.longest_sequence));
+                } else {
+                    table.appendChild(create_row("Longest Sequence:", ["Not Found"]));
+                }
+
+                result.innerHTML = "<br>";
+                result.appendChild(table);
+            }
+        </script> 
+    </head>
+    <body>
+        <form name="calc_form" method="get">
+            <label>Array</label><br>
+            <input id="array" type="text">
+            <br><br>
+            <input name="commit" type="submit" value="Get Result" onclick="return send_query();">
+        </form>
+        <div id="result"></div>
+    </body>
+</html>

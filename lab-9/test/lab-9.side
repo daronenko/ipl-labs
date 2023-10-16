@@ -1,0 +1,213 @@
+{
+  "id": "216efdd2-5df7-4532-9c86-25639a19c395",
+  "version": "2.0",
+  "name": "lab-9",
+  "url": "http://localhost:3000",
+  "tests": [{
+    "id": "58f01749-462c-4f61-b5a4-00e075f90d18",
+    "name": "regular",
+    "commands": [{
+      "id": "68fde94d-3704-4910-8b70-20ce69798009",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c2e62782-516a-43ed-b0a4-d96e5d34738b",
+      "comment": "",
+      "command": "type",
+      "target": "id=array",
+      "targets": [
+        ["id=array", "id"],
+        ["css=#array", "css:finder"],
+        ["xpath=//input[@id='array']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "3 6 5 17 26 21 9 15 7"
+    }, {
+      "id": "faf056fc-decf-485b-b22a-adcfd54cb4a6",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "028087c0-464e-478c-9839-94bd093a589e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=table",
+      "targets": [
+        ["css=table", "css:finder"],
+        ["xpath=//div[@id='result']/table", "xpath:idRelative"],
+        ["xpath=//table", "xpath:position"]
+      ],
+      "value": "Sequence Found: 3 6\\nSequence Found: 5 17 26\\nSequence Found: 9 15\\nLongest Sequence: 5 17 26"
+    }]
+  }, {
+    "id": "27ed5553-729c-479f-ac91-5efe530691ca",
+    "name": "empty",
+    "commands": [{
+      "id": "51c772c8-7f5b-4cee-8270-972571fbd39e",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6aad0af7-2055-4115-a609-91dd912cfe9d",
+      "comment": "",
+      "command": "click",
+      "target": "id=array",
+      "targets": [
+        ["id=array", "id"],
+        ["css=#array", "css:finder"],
+        ["xpath=//input[@id='array']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f22dd412-5615-4722-895e-c85b4d168ed5",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04223c1d-327d-4ead-8b5d-b7b54aa31829",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Enter the array of numbers!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "57dfe6dd-e021-49da-b868-ce4f85bd8c4f",
+    "name": "spaces only",
+    "commands": [{
+      "id": "6b8519c8-5b47-4462-ae02-f50323d3ffed",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5e7e32fa-a544-41b2-82c3-9b118c69a91c",
+      "comment": "",
+      "command": "click",
+      "target": "id=array",
+      "targets": [
+        ["id=array", "id"],
+        ["css=#array", "css:finder"],
+        ["xpath=//input[@id='array']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2e83b39-56ab-4b7a-8032-e62dddb17554",
+      "comment": "",
+      "command": "type",
+      "target": "id=array",
+      "targets": [
+        ["id=array", "id"],
+        ["css=#array", "css:finder"],
+        ["xpath=//input[@id='array']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "       "
+    }, {
+      "id": "a3bb5766-493c-4e38-9e18-b22026ac52ff",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c9b3dea-0044-4da8-a90d-ecfe8762bc39",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "Enter the array of numbers!",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "82ed937f-796b-4b21-a69a-ee27f5aee652",
+    "name": "one number",
+    "commands": [{
+      "id": "c6edcea5-9b66-45df-80b2-f914adb49976",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea5a8f28-a57c-4217-b1ee-51598082a42d",
+      "comment": "",
+      "command": "click",
+      "target": "id=array",
+      "targets": [
+        ["id=array", "id"],
+        ["css=#array", "css:finder"],
+        ["xpath=//input[@id='array']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c064866-b535-454e-b6bf-3b2d3bcf741a",
+      "comment": "",
+      "command": "type",
+      "target": "id=array",
+      "targets": [
+        ["id=array", "id"],
+        ["css=#array", "css:finder"],
+        ["xpath=//input[@id='array']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "c9320670-882d-42f5-9ed3-0e99c5d8bd8c",
+      "comment": "",
+      "command": "click",
+      "target": "name=commit",
+      "targets": [
+        ["name=commit", "name"],
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@name='commit']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "375ed870-86d6-470b-a66a-2834b63d514d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=table",
+      "targets": [],
+      "value": "Longest Sequence: Not Found"
+    }]
+  }],
+  "suites": [{
+    "id": "1ce0fbcb-ea66-4eba-922c-abcc461cc60a",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["58f01749-462c-4f61-b5a4-00e075f90d18"]
+  }],
+  "urls": ["http://localhost:3000/"],
+  "plugins": []
+}
