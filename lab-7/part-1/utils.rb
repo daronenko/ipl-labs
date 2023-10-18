@@ -27,7 +27,7 @@ def generate_words(path)
     words << word
   end
 
-  File.open(path, 'w') do |file|
+  File.open(path, 'a') do |file|
     file.write(words.join(' '))
   end
 end

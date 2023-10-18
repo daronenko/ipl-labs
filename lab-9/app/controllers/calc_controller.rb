@@ -2,7 +2,7 @@ class CalcController < ApplicationController
   def input
     render layout: false
   end
-
+  
   def view
     input = params[:array]
     @longest_sequence = []

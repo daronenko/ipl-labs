@@ -21,3 +21,16 @@ def solve(eps)
 
   sequence.find { |item| (expected - item).abs <= eps }
 end
+
+# def solve(eps)
+#   expected = 1 / Math::E
+#
+#   sum = 0
+#   sequence = []
+#   (1..100).each do |k|
+#     sum += ((-1)**(k + 1)).to_f / _factorial(k + 1)
+#     sequence << sum
+#   end
+#
+#   sequence.find { |item| (expected - item).abs <= eps }
+# end
