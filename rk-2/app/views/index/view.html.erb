@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="mt-4">
+    <h3>Результат</h3>
+      <% unless @error.nil? %>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <div><%= @error %></div>
+        </div>
+      <% else %>
+        <label><strong>Массив</strong></label><br>
+        <%= text_field_tag(nil, nil, value: @output, readonly: true, class: "form-control") %><br>
+      <% end %>
+    <br>
+    <%= link_to "Назад", root_path, class: "btn btn-primary" %>
+  </div>
+</div>
