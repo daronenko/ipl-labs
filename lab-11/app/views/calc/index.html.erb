@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card mt-5">
+    <div class="card-body">
+      <%= bootstrap_form_with url: calc_result_url, method: :post, local: true, remote: false do |f| %>
+        <strong>Задание:</strong> 
+        <p>Написать программу, которая вводит цепочку целых чисел (количество чисел не менее 10) и определяет наиболее длинную монотонно возрастающую их последовательность. Вывести на печать введенную цепочку, все найденные последовательности и наиболее длинную из них. При программировании использовать функцию.</p>
+        <%= f.text_field :value, required: true, label: 'Массив: ' %>
+        <br>
+        <%= f.submit "Вычислить", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <div>
+    <p>
+      <%= link_to "БД в HTML формате", calc_all_url, class: 'btn btn-secondary' %>
+      <%= link_to "БД в XML формате", calc_all_url(format: :xml), class: 'btn btn-secondary' %>
+    </p>
+  </div>
+</div>

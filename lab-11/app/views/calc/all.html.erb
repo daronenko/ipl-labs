@@ -1,0 +1,16 @@
+<div class="container mt-4">
+  <ul>
+    <% @calcs.length.times do |i| %>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h3 class="card-title">Результат <%= i + 1 %></h3><br>
+          <% sequences = @calcs[i].output_sequences.split('\n') %>
+          <% (sequences.length - 1).times.each do |i| %>
+            <p><strong>Sequence</strong> <%= i + 1 %>: <%= sequences[i] %></p>
+          <% end %>
+          <p><strong>Longest Sequence</strong>: <%= sequences[sequences.length - 1] %></p>
+        </div>
+      </div>
+    <% end %>
+  </ul>
+</div>

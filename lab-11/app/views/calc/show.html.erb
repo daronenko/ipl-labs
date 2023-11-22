@@ -1,0 +1,20 @@
+<main class="container mt-5">
+  <% if @error %>
+    <div class="alert alert-danger" role="alert">
+      <p><%= @error %></p>
+    </div>
+  <% else %>
+    <div class="card">
+      <div class="card-body">
+        <h3 class="card-title">Результат:</h3><br>
+        <% sequences = @calc.output_sequences.split('\n') %>
+        <% (sequences.length - 1).times.each do |i| %>
+          <p><strong>Sequence</strong> <%= i + 1 %>: <%= sequences[i] %></p>
+        <% end %>
+        <p><strong>Longest Sequence</strong>: <%= sequences[sequences.length - 1] %></p>
+      </div>
+    </div>
+  <% end %>
+  <br>
+  <%= link_to "Назад", root_url, class: "btn btn-primary" %>
+</main>
