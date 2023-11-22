@@ -1,0 +1,13 @@
+<main class="container vh-100 d-flex flex-column justify-content-center align-items-center">
+  <div class="card">
+    <div class="card-body">
+      <%= bootstrap_form_with url: calcs_url, method: :post, local: true, remote: false do |f| %>
+        <strong>Задание:</strong> 
+        <p>Написать программу, которая вводит цепочку целых чисел (количество чисел не менее 10) и определяет наиболее длинную монотонно возрастающую их последовательность. Вывести на печать введенную цепочку, все найденные последовательности и наиболее длинную из них. При программировании использовать функцию.</p>
+        <%= f.text_field :value, required: true, label: 'Массив: ' %>
+        <br>
+        <%= f.submit "Вычислить", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</main>

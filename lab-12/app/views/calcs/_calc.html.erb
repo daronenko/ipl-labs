@@ -1,0 +1,12 @@
+<div id="<%= dom_id calc %>">
+  <div class="card">
+    <div class="card-body">
+      <p><strong>Input sequence:</strong> <%= calc.input_sequence %></p>
+      <% sequences = calc.output_sequences.split('\n') %>
+      <% (sequences.length - 1).times.each do |i| %>
+        <p><strong>Sequence <%= i + 1 %></strong>: <%= sequences[i] %></p>
+      <% end %>
+      <p><strong>Longest Sequence</strong>: <%= sequences[sequences.length - 1] %></p>
+    </div>
+  </div>
+</div>

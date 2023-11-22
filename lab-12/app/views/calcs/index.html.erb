@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Запросы</h1>
+
+<div id="calcs" class="container">
+  <% @calcs.each do |calc| %>
+    <div class="mt-4">
+      <%= render calc %>
+      <%= link_to "Show this calc", calc, class: "btn btn-secondary mt-2" %>
+    </div>
+  <% end %>
+</div>
+
+<%= link_to "New calc", new_calc_path, class: "btn btn-primary mt-4" %>
