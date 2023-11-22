@@ -1,0 +1,40 @@
+<% if params[:array].nil? %>
+  <% params[:array] = "4 +7 3.84 7 -2.51 5 3" %>
+<% end %>
+
+<div class="container"> 
+  <h1 class="mt-5" style="font-weight: bold">РК-2</h1>
+  <div class="card mt-4">
+    <div class="card-body">
+      <h3 class="card-title">Информация</h2>
+      <p class="card-text">
+        <strong>Автор:</strong> Мироненко Д. И.<br>
+        <strong>Группа:</strong> ИУ6-33Б<br>
+        <strong>Вариант:</strong> 6<br>
+        <strong>Задание:</strong> Дан массив чисел. Определить среднее арифметическое значение положительных элементов массива и поместить его на место срединного элемента массива.<br>
+      </p>
+    </div>
+  </div>
+  <% if not @error.nil? %>
+    <br>
+    <div class="alert alert-danger d-flex align-items-center" role="alert">
+      <div><%= @error %></div>
+    </div>
+  <% end %>
+  <div class="mt-4">
+    <%= form_tag("index/view", :method => "get") do %>
+      <div class="form-group">
+        <h3>Входные данные</h2>
+        <% unless params[:error].nil? %>
+          <div class="alert alert-danger d-flex align-items-center" role="alert">
+            <div><%= params[:error] %></div>
+          </div>
+        <% end %>
+        <label for="array"><strong>Массив</strong></label><br>
+        <%= text_field_tag(:array, nil, value: params[:array], class: "form-control") %>
+      </div>
+      <br>
+      <%= submit_tag("Вычислить", class: "btn btn-primary") %>
+    <% end %>
+  </div>
+</div>
