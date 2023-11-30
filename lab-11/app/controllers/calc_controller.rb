@@ -29,8 +29,8 @@ class CalcController < ApplicationController
 
   def show
     id = Integer(params[:id])
-    if id && Calc.find_by(id: id)
-      @calc = Calc.find(id)
-    end
+    return unless id && Calc.find_by(id: id)
+
+    @calc = Calc.find(id)
   end
 end
