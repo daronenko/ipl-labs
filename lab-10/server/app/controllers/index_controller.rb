@@ -44,11 +44,10 @@ class IndexController < ApplicationController
       @result << { text: "Sequence #{i + 1}", sequence: @sequences[i].join(' ') }
     end
 
-    @result << { text: "Longest Sequence", sequence: @longest_sequence.join(' ') }
+    @result << { text: 'Longest Sequence', sequence: @longest_sequence.join(' ') }
 
     respond_to do |format|
       format.xml { render xml: @result }
-      format.rss { render xml: @result }
     end
   rescue ArgumentError
     @error = 'Invalid input!'

@@ -15,10 +15,6 @@ class IndexController < ApplicationController
     Net::HTTP.get_response(uri)
   end
 
-  def render_client(xml)
-    xml.insert(xml.index("\n"), XSL_LINK)
-  end
-
   def render_server(xml)
     # rubocop:disable Rails/OutputSafety
     XSLT.transform(Nokogiri::XML(xml))
@@ -29,8 +25,8 @@ class IndexController < ApplicationController
 
   def output
     xml = get_xml(params[:array]).body
+    puts xml
     respond_to do |format|
-      format.xml { render xml: render_client(xml) }
       format.html { render html: render_server(xml) }
     end
   end
